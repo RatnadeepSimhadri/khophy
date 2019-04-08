@@ -11,7 +11,6 @@ export default function configureStore(initialState, routerHistory) {
 
   const actionCreators = {
     ...userActions,
-    push,
   };
 
   const reducers = {
