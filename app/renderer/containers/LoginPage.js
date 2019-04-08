@@ -5,7 +5,9 @@ import Login from '../components/Login';
 import userActions from '../actions/user';
 
 const mapStateToProps = (state) => {
-  return state;
+  return {
+    username : state.user.username
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {

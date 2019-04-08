@@ -6,14 +6,19 @@ export default class Login extends Component {
     onLogin: PropTypes.func.isRequired,
   };
 
-  state = {
-    username: '',
-  };
+ 
+
+  constructor(props){
+    super(props)
+    this.state = {
+      username:props.username
+    }
+  }
 
   handleLogin = () => {
     this.props.onLogin({
       username: this.state.username,
-      loggedIn: true,
+      loggedIn: true
     });
   };
 

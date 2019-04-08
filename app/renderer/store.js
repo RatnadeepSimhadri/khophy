@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
-import { connectRouter, routerMiddleware, push } from 'connected-react-router';
-import persistState from 'redux-localstorage';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+//import persistState from 'redux-localstorage'; To Avoid State State
 import thunk from 'redux-thunk';
 
 import user from './reducers/user';
@@ -28,7 +28,7 @@ export default function configureStore(initialState, routerHistory) {
     return compose;
   })();
 
-  const enhancer = composeEnhancers(applyMiddleware(...middlewares), persistState());
+  const enhancer = composeEnhancers(applyMiddleware(...middlewares),/*persistState*/);
   const rootReducer = combineReducers(reducers);
 
   return createStore(rootReducer, initialState, enhancer);
